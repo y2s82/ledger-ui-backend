@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon bin/www\""
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon bin/www\" \"copy-and-watch --watch ./views/*.jade ./public/**/* dist/\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -21,6 +21,7 @@
     "@types/morgan": "^1.9.3",
     "@types/node": "^18.8.3",
     "concurrently": "^7.4.0",
+    "copy-and-watch": "^0.1.6",
     "nodemon": "^2.0.20",
     "typescript": "^4.8.4"
   }
