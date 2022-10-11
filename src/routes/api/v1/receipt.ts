@@ -1,8 +1,14 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
+import { Empty, EntryIdent, EntryDetail, Transaction, APIResponse, Entry } from './state';
 const receipt = express.Router();
 
-receipt.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.send('Receipt /GET response');
+receipt.get<EntryIdent[], APIResponse<Entry[]>> ('/:id', (req, res, next) => {
+    res.json(
+      {
+        data: [],
+        message: "dummy"
+      }
+    );
   }
 );
 
