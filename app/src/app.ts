@@ -8,10 +8,11 @@ import api from "./api/api";
 const app: Koa = new Koa();
 const router: Router = new Router();
 
-router.get("/", async (ctx, next) => {
+router.get("/(.*)", async (ctx, next) => {
   ctx.body = { msg: "Hello world!" };
   await next();
 });
+
 router.use('/api', api.routes(), api.allowedMethods());
 
 app.use(json());

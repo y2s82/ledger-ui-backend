@@ -5,7 +5,7 @@ import receipt from "./receipt";
 const v1api: Router = new Router();
 
 v1api.get("/", async (ctx, next) => {
-  ctx.body = { msg: "Hello world!" };
+  ctx.body = { msg: "Hello v1!" };
   await next();
 });
 
