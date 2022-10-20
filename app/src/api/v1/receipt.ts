@@ -7,8 +7,8 @@ import { Entry } from "./state";
 const receipt: Router = new Router();
 
 async function * addReceipt (ctx: Koa.Context, next: Function) {
-  const id = getUserId(ctx);
-  const inferEntry = saveReceipt(id,ctx.files.file[0].buffer);
+  let id = getUserId(ctx);
+  let inferEntry = saveReceipt(id.entryId, ctx.files.file[0].buffer);
   ctx.body = inferEntry;
   await next();
 }
