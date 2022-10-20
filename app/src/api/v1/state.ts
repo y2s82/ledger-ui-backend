@@ -23,14 +23,24 @@ export interface Entry {
   comments?: string[];
 }
 
+export interface EntryReply {
+  entry: Entry;
+  status: Status;
+}
+
+export enum IdType {
+  Entry,
+  User,
+};
+
+export interface QueryData {
+  entryId: string;
+  type: IdType;
+  status?: Status;
+}
+
 export interface ReceiptReply {
   entry?: Entry;
   receiptUrl: string;
   status: Status;
-}
-
-export interface QueryData {
-  entryId: string;
-  detail?: string;
-  status?: Status;
 }
