@@ -17,10 +17,16 @@ export interface Transaction {
 export interface ReceiptReply {
   entry?: Entry;
   receiptUrl: string;
+  status: Status;
+}
+
+export interface Status {
+  code: number;
+  comment?: string;
 }
 
 export interface QueryData {
   entryId: string;
-  status?: string;
   detail?: string;
+  status?: Status;
 }
