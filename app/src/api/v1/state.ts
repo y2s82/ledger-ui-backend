@@ -21,6 +21,10 @@ export interface ReceiptReply {
 }
 
 export interface Status {
+  /**
+   * code: numeric representation following Unix return - 0 is success
+   * comment: any additional information that may be useful for UX
+   */
   code: number;
   comment?: string;
 }
